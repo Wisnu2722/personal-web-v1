@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #111;
+        }
+
+        .neon-border {
+            position: relative;
+            padding: 20px;
+            color: #fff;
+            font-size: 24px;
+            font-family: 'Arial', sans-serif;
+            background-color: #111;
+            border: 2px solid #00ff00;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .neon-border:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, #00ff00, #00ffcc, #00ff00);
+            z-index: -1;
+            opacity: 0;
+            border-radius: 10px;
+            animation: glow 2s linear infinite;
+            animation-name: glow;
+            animation-duration: 2s;
+            animation-timing-function: linear;
+            animation-iteration-count: infinite;
+        }
+
+        @keyframes glow {
+
+            0%,
+            100% {
+                opacity: 0;
+                box-shadow: 0 0 10px #00ffcc, 0 0 20px #00ffcc, 0 0 30px #00ffcc;
+            }
+
+            50% {
+                opacity: 1;
+                box-shadow: 0 0 20px #00ffcc, 0 0 30px #00ffcc, 0 0 40px #00ffcc;
+            }
+        }
+
+        @-webkit-keyframes glow {
+
+            0%,
+            100% {
+                opacity: 0;
+                box-shadow: 0 0 10px #00ffcc, 0 0 20px #00ffcc, 0 0 30px #00ffcc;
+            }
+
+            50% {
+                opacity: 1;
+                box-shadow: 0 0 20px #00ffcc, 0 0 30px #00ffcc, 0 0 40px #00ffcc;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="neon-border">Glowing Neon Border</div>
+</body>
+
+</html>
